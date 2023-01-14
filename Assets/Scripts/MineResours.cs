@@ -3,49 +3,39 @@ using UnityEngine;
 public class MineResours : MonoBehaviour
 {
     private GameObject _player;
-    private static bool _isMine = false;
-    private float _dist;
-    [SerializeField] private static int _mineHealth;
+    [Header("Distance")]
+    [SerializeField] private float _dist;
+    [Header("HP mine resource")]
+    [SerializeField] private int mineHealth;
 
     private void Start()
     {
         _player = GameObject.Find("Player");
-        _mineHealth = Random.Range(2, 10);
+        mineHealth = Random.Range(2, 10);
     }
 
     private void Update()
     {
         _dist = Vector3.Distance(_player.transform.position, transform.position);
-        if (_mineHealth < 1)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            IsMiner();
-        }
+        IsMiner();
     }
 
     private void IsMiner()
     {
-        
-        if (_dist <= 2.0f && _mineHealth>=1)
+        if (_dist <= 2.0f && mineHealth>=1 && PlayerController.PlayerInput.Player.Mine.WasPressedThisFrame())
         {
-            _isMine = true;
-        }
-        else
-        {
-            _isMine = false;
+            Mine();
         }
     }
     
-    public static void Mine()
+    private void Mine()
     {
-        if (_isMine)
+        mineHealth -= 1;
+        Debug.Log("Mine");
+        Debug.Log(mineHealth);
+        if (mineHealth < 1)
         {
-            Debug.Log("Mine");
-            _mineHealth -= 1;
-            Debug.Log(_mineHealth);
+            Destroy(gameObject);
         }
     }
 }

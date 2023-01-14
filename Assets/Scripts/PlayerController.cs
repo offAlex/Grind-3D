@@ -6,21 +6,21 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _speed = 3.0f;
     
     private Rigidbody _rb;
-    private PlayerInput _playerInput;
+    public static PlayerInput PlayerInput;
 
     private void Awake()
     {
-        _playerInput = new PlayerInput();
+        PlayerInput = new PlayerInput();
     }
 
     private void OnEnable()
     {
-        _playerInput.Enable();
+        PlayerInput.Enable();
     }
     
     private void OnDisable()
     {
-        _playerInput.Disable();
+        PlayerInput.Disable();
     }
 
     private void Start()
@@ -30,15 +30,10 @@ public class PlayerController : MonoBehaviour
     
     private void FixedUpdate()
     {
-        Vector2 moveDirection = _playerInput.Player.Move.ReadValue<Vector2>();
+        Vector2 moveDirection = PlayerInput.Player.Move.ReadValue<Vector2>();
         Move(moveDirection);
-        
-        if (_playerInput.Player.Mine.WasPressedThisFrame())
-        {
-            MineResours.Mine();
-        }
 
-        if (_playerInput.Player.Shoot.WasPressedThisFrame())
+        if (PlayerInput.Player.Shoot.WasPressedThisFrame())
         {
             Shoot();
         }

@@ -745,7 +745,7 @@ GameObject:
   - component: {fileID: 1491378911}
   - component: {fileID: 1491378910}
   m_Layer: 0
-  m_Name: ManagerSpawnMine
+  m_Name: ManagerSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

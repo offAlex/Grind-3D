@@ -4,18 +4,19 @@ public class MineResours : MonoBehaviour
 {
     private GameObject _player;
     private static bool _isMine = false;
-    public static int MineHealth;
+    private float _dist;
+    [SerializeField] private static int _mineHealth;
 
     private void Start()
     {
         _player = GameObject.Find("Player");
-        MineHealth = Random.Range(2, 10);
+        _mineHealth = Random.Range(2, 10);
     }
 
     private void Update()
     {
-        
-        if (MineHealth < 1)
+        _dist = Vector3.Distance(_player.transform.position, transform.position);
+        if (_mineHealth < 1)
         {
             Destroy(gameObject);
         }
@@ -27,8 +28,8 @@ public class MineResours : MonoBehaviour
 
     private void IsMiner()
     {
-        var dist = Vector3.Distance(_player.transform.position, transform.position);
-        if (dist <= 2.0f && MineHealth>=1)
+        
+        if (_dist <= 2.0f && _mineHealth>=1)
         {
             _isMine = true;
         }
@@ -43,8 +44,8 @@ public class MineResours : MonoBehaviour
         if (_isMine)
         {
             Debug.Log("Mine");
-            MineHealth -= 1;
-            Debug.Log(MineHealth);
+            _mineHealth -= 1;
+            Debug.Log(_mineHealth);
         }
     }
 }

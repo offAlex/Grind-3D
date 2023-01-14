@@ -6,9 +6,11 @@
     <e p="D:\Unity Project\Grind 3D" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="Material" t="Include" />
+        <e p="Materials" t="Include" />
+        <e p="Prefabs" t="Include" />
         <e p="Scenes" t="Include" />
         <e p="Scripts" t="Include">
+          <e p="ManagerSpawnMine.cs" t="Include" />
           <e p="MineResours.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
           <e p="PlayerInput.cs" t="Include" />

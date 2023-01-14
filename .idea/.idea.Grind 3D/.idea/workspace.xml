@@ -19,8 +19,9 @@
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/IPlayer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ManagerSpawnMine.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MineResours.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ResourceText.cs" />
       </list>
     </option>
   </component>

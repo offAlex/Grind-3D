@@ -31,6 +31,7 @@ public class MineResours : MonoBehaviour
     private void Mine()
     {
         mineHealth -= 1;
+        PlayerController.Coins += Random.Range(1, 4);
         Debug.Log("Mine");
         Debug.Log(mineHealth);
         if (mineHealth < 1)

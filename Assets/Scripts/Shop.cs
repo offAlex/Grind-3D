@@ -6,7 +6,7 @@ public class Shop : MonoBehaviour
 {
     private GameObject _player;
     [Header("Distance")]
-    [SerializeField] private float _dist;
+    [SerializeField] private float dist;
 
     private void Start()
     {
@@ -15,13 +15,13 @@ public class Shop : MonoBehaviour
     
     private void Update()
     {
-        _dist = Vector3.Distance(_player.transform.position, transform.position);
+        dist = Vector3.Distance(_player.transform.position, transform.position);
         IsSell();
     }
     
     private void IsSell()
     {
-        if (_dist <= 2.0f && PlayerController.PlayerInput.Player.ActionType.WasPressedThisFrame())
+        if (dist <= 2.0f && PlayerController.PlayerInput.Player.ActionType.WasPressedThisFrame())
         {
             Sell();
         }

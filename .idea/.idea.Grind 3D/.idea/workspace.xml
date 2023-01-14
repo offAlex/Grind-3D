@@ -19,12 +19,12 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/IPlayer.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ManagerSpawnMine.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ResourceText.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/MineResours.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GUItext.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Shop.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ManagerSpawnMine.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MineResours.cs" />
       </list>
     </option>
   </component>

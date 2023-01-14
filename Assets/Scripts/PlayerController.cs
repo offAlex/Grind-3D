@@ -5,8 +5,10 @@ using UnityEngine.EventSystems;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float speed = 3.0f;
-    [SerializeField] public static int Resource;
-    [SerializeField] public static int Coins;
+    public static int Resource;
+    public static int MaxCountResource = 40;
+    public static int Coins;
+    
     
     private Rigidbody _rb;
     public static PlayerInput PlayerInput;

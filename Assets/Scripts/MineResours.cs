@@ -4,7 +4,7 @@ public class MineResours : MonoBehaviour
 {
     private GameObject _player;
     [Header("Distance")]
-    [SerializeField] private float _dist;
+    [SerializeField] private float dist;
     [Header("HP mine resource")]
     [SerializeField] private int mineHealth;
 
@@ -16,15 +16,21 @@ public class MineResours : MonoBehaviour
 
     private void Update()
     {
-        _dist = Vector3.Distance(_player.transform.position, transform.position);
+        dist = Vector3.Distance(_player.transform.position, transform.position);
         IsMiner();
     }
 
     private void IsMiner()
     {
-        if (_dist <= 2.0f && mineHealth>=1 && PlayerController.PlayerInput.Player.ActionType.WasPressedThisFrame())
+        if (dist <= 2.0f && mineHealth>=1 && PlayerController.PlayerInput.Player.ActionType.WasPressedThisFrame()
+            && PlayerController.MaxCountResource > PlayerController.Resource)
         {
             Mine();
+        }
+
+        if (PlayerController.MaxCountResource <= PlayerController.Resource)
+        {
+            PlayerController.Resource = PlayerController.MaxCountResource;
         }
     }
     
@@ -32,10 +38,9 @@ public class MineResours : MonoBehaviour
     {
         mineHealth -= 1;
         PlayerController.Resource += Random.Range(1, 4);
-        Debug.Log("Mine");
-        Debug.Log(mineHealth);
         if (mineHealth < 1)
         {
+            ManagerSpawnMine.CountMine--;
             Destroy(gameObject);
         }
     }

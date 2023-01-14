@@ -19,8 +19,8 @@
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/IPlayer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ManagerSpawnMine.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/MineResours.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MineResours.cs" />
       </list>
     </option>
   </component>
@@ -64,7 +64,7 @@
       <option name="presentableId" value="Default" />
       <updated>1673678924609</updated>
       <workItem from="1673679002382" duration="2681000" />
-      <workItem from="1673682664799" duration="9504000" />
+      <workItem from="1673682664799" duration="10902000" />
     </task>
     <servers />
   </component>

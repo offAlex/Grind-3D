@@ -12,6 +12,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ManagerSpawnMine.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Shop.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MineResours.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -19,9 +20,11 @@
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/IPlayer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ManagerSpawnMine.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/MineResours.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ResourceText.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MineResours.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GUItext.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Shop.cs" />
       </list>
     </option>
   </component>

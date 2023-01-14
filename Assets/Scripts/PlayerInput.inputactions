@@ -15,7 +15,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Mine",
+                    "name": "ActionType",
                     "type": "Button",
                     "id": "b2b8ae05-79f0-4fd7-8c4c-a8133446ac97",
                     "expectedControlType": "Button",
@@ -96,7 +96,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "keyboard & mouse",
-                    "action": "Mine",
+                    "action": "ActionType",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

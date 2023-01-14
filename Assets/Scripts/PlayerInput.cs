@@ -37,7 +37,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""Mine"",
+                    ""name"": ""ActionType"",
                     ""type"": ""Button"",
                     ""id"": ""b2b8ae05-79f0-4fd7-8c4c-a8133446ac97"",
                     ""expectedControlType"": ""Button"",
@@ -118,7 +118,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""keyboard & mouse"",
-                    ""action"": ""Mine"",
+                    ""action"": ""ActionType"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -169,7 +169,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         // Player
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
-        m_Player_Mine = m_Player.FindAction("Mine", throwIfNotFound: true);
+        m_Player_ActionType = m_Player.FindAction("ActionType", throwIfNotFound: true);
         m_Player_Shoot = m_Player.FindAction("Shoot", throwIfNotFound: true);
     }
 
@@ -231,14 +231,14 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Player;
     private IPlayerActions m_PlayerActionsCallbackInterface;
     private readonly InputAction m_Player_Move;
-    private readonly InputAction m_Player_Mine;
+    private readonly InputAction m_Player_ActionType;
     private readonly InputAction m_Player_Shoot;
     public struct PlayerActions
     {
         private @PlayerInput m_Wrapper;
         public PlayerActions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Player_Move;
-        public InputAction @Mine => m_Wrapper.m_Player_Mine;
+        public InputAction @ActionType => m_Wrapper.m_Player_ActionType;
         public InputAction @Shoot => m_Wrapper.m_Player_Shoot;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
@@ -252,9 +252,9 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 @Move.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
                 @Move.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
                 @Move.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
-                @Mine.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMine;
-                @Mine.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMine;
-                @Mine.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMine;
+                @ActionType.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnActionType;
+                @ActionType.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnActionType;
+                @ActionType.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnActionType;
                 @Shoot.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShoot;
                 @Shoot.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShoot;
                 @Shoot.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShoot;
@@ -265,9 +265,9 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 @Move.started += instance.OnMove;
                 @Move.performed += instance.OnMove;
                 @Move.canceled += instance.OnMove;
-                @Mine.started += instance.OnMine;
-                @Mine.performed += instance.OnMine;
-                @Mine.canceled += instance.OnMine;
+                @ActionType.started += instance.OnActionType;
+                @ActionType.performed += instance.OnActionType;
+                @ActionType.canceled += instance.OnActionType;
                 @Shoot.started += instance.OnShoot;
                 @Shoot.performed += instance.OnShoot;
                 @Shoot.canceled += instance.OnShoot;
@@ -296,7 +296,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
     public interface IPlayerActions
     {
         void OnMove(InputAction.CallbackContext context);
-        void OnMine(InputAction.CallbackContext context);
+        void OnActionType(InputAction.CallbackContext context);
         void OnShoot(InputAction.CallbackContext context);
     }
 }

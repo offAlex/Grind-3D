@@ -22,7 +22,7 @@ public class MineResours : MonoBehaviour
 
     private void IsMiner()
     {
-        if (_dist <= 2.0f && mineHealth>=1 && PlayerController.PlayerInput.Player.Mine.WasPressedThisFrame())
+        if (_dist <= 2.0f && mineHealth>=1 && PlayerController.PlayerInput.Player.ActionType.WasPressedThisFrame())
         {
             Mine();
         }
@@ -31,6 +31,7 @@ public class MineResours : MonoBehaviour
     private void Mine()
     {
         mineHealth -= 1;
+        PlayerController.Resource += Random.Range(1, 4);
         Debug.Log("Mine");
         Debug.Log(mineHealth);
         if (mineHealth < 1)
